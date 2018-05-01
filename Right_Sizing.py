@@ -7,6 +7,12 @@ This script will accept a csv ticket dump (without headers) in the following for
     TicketID,Priority,SubmitDate
 Submit date should be in the format M(M)/D(D)/YYYY H(H):MI
 
+Sample CSV format:
+INC1,Medium,4/26/2018 10:28
+INC2,High,4/25/2018 17:16
+INC3,Medium,4/25/2018 16:05
+INC4,Medium,4/25/2018 11:11
+
 Also, it requires the following input:
     Number of months for which ticket dump is present
     SLA/MTTR in hours. If MTTRs are less than SLAs, provide the MTTR values
@@ -96,10 +102,6 @@ for i in parser_total:
         ticketholder.Shift = 0;
     TicketDump.append(ticketholder);
     
-
-#for i in TicketDump:
-#    if (i.Priority is 0) or (i.Shift is 0):
-#        TicketDump.remove(i);
 
 for i in TicketDump:
     if i.Priority == 1:
